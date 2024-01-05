@@ -1,0 +1,100 @@
+@baseurl = http://localhost:5000/api
+
+####################### CUSTOMERS #######################
+
+### login customer
+POST {{baseurl}}/login
+Content-Type: application/json
+
+{
+    "email" : "rangga@gmail.com"
+}
+
+### create customer
+POST {{baseurl}}/customers
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik51cnVsIEtoYWlyaW5hIFN1cmJha3RpIiwicGhvbmUiOiIwODIyMzQ1Njc4OTAiLCJlbWFpbCI6Im51cnVsa2hhaXJpbmEwMEBnbWFpbC5jb20iLCJhZGRyZXNzIjoiSmwuIHBhc2FyIHJheWEgbm8uMTIiLCJjcmVhdGVkQXQiOiIyMDI0LTAxLTA0VDA1OjE2OjQ0Ljk2NloiLCJ1cGRhdGVkQXQiOiIyMDI0LTAxLTA0VDA1OjE2OjQ0Ljk2NloiLCJpYXQiOjE3MDQzNzE2NTIsImV4cCI6MTcwNDQxNDg1Mn0.me-KyzSL-EsclZgmuUNSwm5swAPytFkYFWUM0yrHWZ4
+
+{
+    "input":{
+        "name" : "Rangga",
+        "phone": "082234730190",
+        "email": "rangga@gmail.com",
+        "address": "Jl. belimbing no.12"
+    }
+}
+
+### get all customers
+GET {{baseurl}}/customers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im51cnVsa2hhaXJpbmEwMEBnbWFpbC5jb20iLCJpYXQiOjE3MDQzNzAwNDgsImV4cCI6MTcwNDQxMzI0OH0.lNvzUTGiW76qhNauow9tgLT0inVdfMO4hNVgYVYjTlo
+
+### get customer by id
+GET {{baseurl}}/customers/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im51cnVsa2hhaXJpbmEwMEBnbWFpbC5jb20iLCJpYXQiOjE3MDQzNDUzODksImV4cCI6MTcwNDM0ODk4OX0.DYnRfAwne0fAgn4ZQbt8MpJdh2_2gG_2DROfc5yV43s
+
+### update a customer
+PATCH {{baseurl}}/customers/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im51cnVsa2hhaXJpbmEwMEBnbWFpbC5jb20iLCJpYXQiOjE3MDQzNDUzODksImV4cCI6MTcwNDM0ODk4OX0.DYnRfAwne0fAgn4ZQbt8MpJdh2_2gG_2DROfc5yV43s
+
+{
+    "input":{
+        "name" :"Khairina ya",
+        "email":"khairina@gmail.com"
+    }
+}
+
+### delete a customer
+DELETE  {{baseurl}}/customers/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im51cnVsa2hhaXJpbmEwMEBnbWFpbC5jb20iLCJpYXQiOjE3MDQzNDUzODksImV4cCI6MTcwNDM0ODk4OX0.DYnRfAwne0fAgn4ZQbt8MpJdh2_2gG_2DROfc5yV43s
+
+
+####################### PRODUCTS #######################
+
+
+### create product
+POST {{baseurl}}/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im51cnVsa2hhaXJpbmEwMEBnbWFpbC5jb20iLCJpYXQiOjE3MDQzNDUzODksImV4cCI6MTcwNDM0ODk4OX0.DYnRfAwne0fAgn4ZQbt8MpJdh2_2gG_2DROfc5yV43s
+
+{
+    "input":{
+        "name" : "Rina",
+        "unit": 20,
+        "price": 20000
+    }
+}
+
+### get all products
+GET {{baseurl}}/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im51cnVsa2hhaXJpbmEwMEBnbWFpbC5jb20iLCJpYXQiOjE3MDQzNDUzODksImV4cCI6MTcwNDM0ODk4OX0.DYnRfAwne0fAgn4ZQbt8MpJdh2_2gG_2DROfc5yV43s
+
+### get product by id
+GET {{baseurl}}/products/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im51cnVsa2hhaXJpbmEwMEBnbWFpbC5jb20iLCJpYXQiOjE3MDQzNDUzODksImV4cCI6MTcwNDM0ODk4OX0.DYnRfAwne0fAgn4ZQbt8MpJdh2_2gG_2DROfc5yV43s
+
+### update a product
+PATCH {{baseurl}}/products/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im51cnVsa2hhaXJpbmEwMEBnbWFpbC5jb20iLCJpYXQiOjE3MDQzNDUzODksImV4cCI6MTcwNDM0ODk4OX0.DYnRfAwne0fAgn4ZQbt8MpJdh2_2gG_2DROfc5yV43s
+
+{
+    "input":{
+        "name" :"Khairina",
+        "unit":25,
+        "price": 100000
+    }
+}
+
+### delete a product
+DELETE  {{baseurl}}/products/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im51cnVsa2hhaXJpbmEwMEBnbWFpbC5jb20iLCJpYXQiOjE3MDQzNDUzODksImV4cCI6MTcwNDM0ODk4OX0.DYnRfAwne0fAgn4ZQbt8MpJdh2_2gG_2DROfc5yV43s
+
+
+### get all orders
+GET {{baseurl}}/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlJhbmdnYSIsInBob25lIjoiMDgyMjM0NzMwMTkwIiwiZW1haWwiOiJyYW5nZ2FAZ21haWwuY29tIiwiYWRkcmVzcyI6IkpsLiBiZWxpbWJpbmcgbm8uMTIiLCJjcmVhdGVkQXQiOiIyMDI0LTAxLTA1VDA0OjIyOjQ3LjYzN1oiLCJ1cGRhdGVkQXQiOiIyMDI0LTAxLTA1VDA0OjIyOjQ3LjYzN1oiLCJpYXQiOjE3MDQ0MjkzNTUsImV4cCI6MTcwNDQ3MjU1NX0.jKiZGT4dQ_Z6ji0em8QebgPldZtW8DpQi6MTi2-Ej0M
+
+### delete a order
+DELETE  {{baseurl}}/orders/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlJhbmdnYSIsInBob25lIjoiMDgyMjM0NzMwMTkwIiwiZW1haWwiOiJyYW5nZ2FAZ21haWwuY29tIiwiYWRkcmVzcyI6IkpsLiBiZWxpbWJpbmcgbm8uMTIiLCJjcmVhdGVkQXQiOiIyMDI0LTAxLTA1VDA0OjIyOjQ3LjYzN1oiLCJ1cGRhdGVkQXQiOiIyMDI0LTAxLTA1VDA0OjIyOjQ3LjYzN1oiLCJpYXQiOjE3MDQ0NDMzOTIsImV4cCI6MTcwNDQ4NjU5Mn0.b_g5b-UdjPAwMUJyssktcAWFDjrgkC3mPueBcvJUqJ0
